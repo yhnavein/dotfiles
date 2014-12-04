@@ -1,0 +1,4 @@
+{
+	"eqnull": true,
+  "globals": { "console" : false, "angular" : false, "$" : false, "window" : false }
+}

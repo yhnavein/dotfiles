@@ -1,0 +1,3 @@
+bind main { !git pull
+bind main } !git push
+set tab-size = 2
