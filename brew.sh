@@ -19,7 +19,7 @@ brew install findutils
 
 brew install htop tmux vim
 
-brew install wget zsh git mercurial tig
+brew install wget curl zsh git mercurial tig
 
 brew install node
 
