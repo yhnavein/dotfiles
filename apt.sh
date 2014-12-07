@@ -30,4 +30,7 @@ apt-get install -y mysql-server-5.6 postgresql-9.3 htop tmux nginx php5 php5-fpm
 #Fixing node.js on Ubuntu
 sudo ln -s /usr/bin/nodejs /usr/local/bin/node
 
-apt-get install php5-mysql php5-curl
+apt-get install -y php5-mysql php5-curl
+
+#Some fonts
+apt-get install -y ttf-ubuntu-font-family ttf-dejavu ttf-bitstream-vera
