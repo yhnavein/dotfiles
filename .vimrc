@@ -1,8 +1,7 @@
 set backspace=indent,eol,start
 
 syntax on
-autocmd Filetype gitcommit spell textwidth=72
-
+autocmd FileType gitcommit setlocal spell textwidth=72
 
 set number
 set cursorline

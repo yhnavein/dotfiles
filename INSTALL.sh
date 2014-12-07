@@ -4,11 +4,14 @@
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 ############################
 
+# Ask for the administrator password upfront.
+sudo -v
+
 ########## Variables
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".vimrc .vim .zshrc .jshintrc .tigrc .zsh_profile"    # list of files/folders to symlink in homedir
+files=".vimrc .vim .zshrc .jshintrc .tigrc .zsh_profile .gitconfig"    # list of files/folders to symlink in homedir
 
 ##########
 

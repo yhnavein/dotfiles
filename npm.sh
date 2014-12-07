@@ -3,4 +3,4 @@
 # Ask for the administrator password upfront.
 sudo -v
 
-npm install bower jshint grunt-cli karma-cli nodemon node-inspector static
+npm install -g bower jshint grunt-cli karma-cli nodemon node-inspector node-static
