@@ -21,7 +21,7 @@ add-apt-repository ppa:webupd8team/sublime-text-3
 apt-get update && apt-get install sublime-text
 
 
-wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 chsh -s `which zsh`
 
 # Installing programmer stuff
