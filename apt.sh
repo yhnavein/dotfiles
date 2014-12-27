@@ -33,4 +33,10 @@ sudo ln -s /usr/bin/nodejs /usr/local/bin/node
 apt-get install -y php5-mysql php5-curl
 
 #Some fonts
-apt-get install -y ttf-ubuntu-font-family ttf-dejavu ttf-bitstream-vera
+apt-get install -y ttf-ubuntu-font-family ttf-dejavu ttf-bitstream-vera fonts-cantarell fonts-droid fonts-inconsolata fdupes
+
+#Installing Zeal (Dash for Linux)
+add-apt-repository ppa:jerzy-kozera/zeal-ppa
+apt-get update && apt-get install zeal
+
+apt-get install conky-all transmission

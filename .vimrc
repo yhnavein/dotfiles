@@ -22,7 +22,7 @@ set autoread
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
@@ -50,3 +50,5 @@ set noswapfile
 set shiftwidth=2
 set tabstop=2
 
+set mouse=a
+set mousehide
