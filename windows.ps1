@@ -1,3 +1,5 @@
+# Custom version of https://github.com/jayharris/dotfiles-windows
+
 $machineName    = "Yhnavein8"
 
 # Get the ID and security principal of the current user account
