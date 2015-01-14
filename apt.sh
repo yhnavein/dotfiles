@@ -21,7 +21,7 @@ add-apt-repository ppa:webupd8team/sublime-text-3
 apt-get update && apt-get install sublime-text
 
 
-wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 chsh -s `which zsh`
 
 # Installing programmer stuff
@@ -30,4 +30,13 @@ apt-get install -y mysql-server-5.6 postgresql-9.3 htop tmux nginx php5 php5-fpm
 #Fixing node.js on Ubuntu
 sudo ln -s /usr/bin/nodejs /usr/local/bin/node
 
-apt-get install php5-mysql php5-curl
+apt-get install -y php5-mysql php5-curl
+
+#Some fonts
+apt-get install -y ttf-ubuntu-font-family ttf-dejavu ttf-bitstream-vera fonts-cantarell fonts-droid fonts-inconsolata fdupes
+
+#Installing Zeal (Dash for Linux)
+add-apt-repository ppa:jerzy-kozera/zeal-ppa
+apt-get update && apt-get install zeal
+
+apt-get install conky-all transmission

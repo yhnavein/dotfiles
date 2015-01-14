@@ -5,3 +5,61 @@
 	default = simple
 [core]
 	editor = /usr/bin/vim
+	fileMode = false
+[diff]
+	algorithm = patience
+
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 955x710+1+68
+	history-view-vpane-position = 402
+	main-window-view = HistoryView
+	file-view-vpane-position = 71
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[merge]
+	tool = mymeld
+[mergetool "mymeld"]
+	cmd = meld "$LOCAL" "$MERGED" "$REMOTE"
+
+[alias]
+	hist = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s' --graph
+	histfull = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s%n' --graph --name-status
+	llog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
+	changelog = log --pretty=format:'%Cgreen%d %Creset%s' --date=iso
+
+	whois = "!sh -c 'git log -i -1 --pretty=\"format::%an <%ae>\n\" --author=\"$1\"' -"
+	whatis = show -s --pretty='tformat::%h (%s, %ad)' --date=short
+
+	anychanges = !sh -c 'git fetch' && git log --oneline HEAD..origin/$1
+	anychangesonmaster = !sh -c 'git fetch' && git log --oneline HEAD..origin/master
+	whoischanging = !sh -c 'git shortlog HEAD..origin/$0'
+	whoischangingmaster = !sh -c 'git shortlog HEAD..origin/master'
+
+	showtags = show-ref --tags
+	pushtags = push --tags
+	tagwithdate = !sh -c 'git tag "$0"_$(date "+%y-%m-%d_%H-%M-%S")'
+
+	purr = pull --rebase
+
+	standup = log --date=relative --graph --since='yesterday'
+
+	discard = !sh -c 'git clean -df && git checkout -- .'
+	unstage = reset --hard HEAD
+
+[apply]
+	whitespace = nowarn
