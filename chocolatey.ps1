@@ -45,3 +45,4 @@ cinst lastpass
 cinst pdfxchangeviewer
 cinst transmission-qt
 cinst aimp
+cinst krita
