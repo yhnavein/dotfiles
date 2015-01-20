@@ -61,5 +61,7 @@
 	discard = !sh -c 'git clean -df && git checkout -- .'
 	unstage = reset --hard HEAD
 
+  co = checkout
+	count = !git shortlog -sn
 [apply]
 	whitespace = nowarn
