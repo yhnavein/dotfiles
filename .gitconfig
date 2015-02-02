@@ -32,7 +32,7 @@
 	untracked = cyan
 
 [merge]
-	tool = mymeld
+	tool = vimdiff
 [mergetool "mymeld"]
 	cmd = meld "$LOCAL" "$MERGED" "$REMOTE"
 
@@ -65,3 +65,7 @@
 	count = !git shortlog -sn
 [apply]
 	whitespace = nowarn
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true

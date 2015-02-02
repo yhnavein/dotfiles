@@ -50,8 +50,9 @@ ZSH_THEME="robbyrussell"
 plugins=(git bower npm osx sublime)
 
 # User configuration
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+export PATH="/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
