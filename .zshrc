@@ -50,10 +50,15 @@ ZSH_THEME="robbyrussell"
 plugins=(git bower npm osx sublime)
 
 # User configuration
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+# export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 export PATH="/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # export MANPATH="/usr/local/man:$MANPATH"
+
+# Different prompt color for root
+autoload colors
+colors
+PS1="%~ %{%(#~$fg[red]~$fg[blue])%}%#%{$fg[default]%} "
 
 source $ZSH/oh-my-zsh.sh
 
