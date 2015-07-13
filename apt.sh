@@ -39,4 +39,16 @@ apt-get install -y ttf-ubuntu-font-family ttf-dejavu ttf-bitstream-vera fonts-ca
 add-apt-repository ppa:jerzy-kozera/zeal-ppa
 apt-get update && apt-get install zeal
 
-apt-get install conky-all transmission
+apt-get install -y conky-all transmission
+
+#Installing Teamocil
+apt-get install python-software-properties
+apt-add-repository ppa:brightbox/ruby-ng
+apt-get update
+apt-get install ruby2.1
+gem install teamocil
+
+#Installing Krita
+add-apt-repository ppa:dimula73/krita
+apt-get update
+apt-get install krita-2.9

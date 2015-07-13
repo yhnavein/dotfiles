@@ -11,14 +11,14 @@ gap_y 70
 minimum_size 268 390
 maximum_width 268
 own_window yes
-own_window_type dock  # other options are: override/normal/desktop/panel
+own_window_type normal  # other options are: override/normal/desktop/panel
 own_window_transparent yes
 own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
 border_inner_margin 0
 border_outer_margin 0
 #alignment middle_middle
-#own_window_argb_visual yes
-#own_window_argb_value 0
+own_window_argb_visual yes
+own_window_argb_value 255
 
 # Graphics settings #
 draw_shades no
