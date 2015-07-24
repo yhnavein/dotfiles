@@ -89,7 +89,7 @@
 
     "block-scoped-var": 0,
     "brace-style": [0, "1tbs"],
-    "camelcase": 2,
+    "camelcase": 0,
     "complexity": [0, 11],
     "consistent-return": 2,
     "consistent-this": [0, "that"],
