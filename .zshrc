@@ -95,3 +95,6 @@ alias tmuxks="tmux kill-session"
 alias tmuxkr="tmux kill-server"
 alias mvni="mvn clean install -Dmaven.test.skip -Plocal"
 alias mvn-update="mvn appengine:update -Pdevelopment -Dmaven.test.skip"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
