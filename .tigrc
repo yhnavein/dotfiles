@@ -1,3 +1,12 @@
 bind main { !git pull
 bind main } !git push
 set tab-size = 2
+
+# Use Git's default (reverse chronological) order, never automatically
+# use topo-order for the commit graph
+set commit-order = default
+
+# Limit number of commits loaded by default to 1000
+set main-options = -n 1000
+
+
