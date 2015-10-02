@@ -1,0 +1,43 @@
+"*":
+  "exception-reporting":
+    userId: "95d045b9-b4b5-36f4-868f-fa902ee4c2e7"
+  welcome:
+    showOnStartup: false
+  editor:
+    preferredLineLength: 100
+    showIndentGuide: true
+    scrollPastEnd: true
+    showInvisibles: true
+    backUpBeforeSaving: true
+    tabType: "soft"
+  core:
+    followSymlinks: true
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      ".keep"
+      "._*"
+      "*.pyc"
+      "Thumbs.db"
+    ]
+    themes: [
+      "one-dark-ui"
+      "monokai"
+    ]
+    autoHideMenuBar: true
+    audioBeep: false
+  linter: {}
+  editor:
+    invisibles: {}
+  "one-dark-ui": {}
+  tabs:
+    usePreviewTabs: true
+    enableVcsColoring: true
+  pigments: {}
+  linter:
+    showErrorTabProject: false
+    showErrorTabFile: false
+    showErrorPanel: false
+    lintOnFly: false

@@ -11,7 +11,7 @@ sudo -v
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".vimrc .vim .zshrc .jshintrc .tigrc .zsh_profile .gitconfig .hgrc .conkyrc .conky-weather .tmux.conf .eslintrc"    # list of files/folders to symlink in homedir
+files=".vimrc .vim .zshrc .jshintrc .tigrc .zsh_profile .gitconfig .hgrc .conkyrc .conky-weather .tmux.conf .eslintrc .atom"    # list of files/folders to symlink in homedir
 
 ##########
 
