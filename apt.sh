@@ -25,12 +25,13 @@ wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 chsh -s `which zsh`
 
 # Installing programmer stuff
-apt-get install -y mysql-server-5.6 postgresql-9.3 htop tmux nginx php5 php5-fpm meld nodejs npm
-
-#Fixing node.js on Ubuntu
-sudo ln -s /usr/bin/nodejs /usr/local/bin/node
+apt-get install -y mysql-server-5.6 postgresql-9.3 htop tmux nginx php5 php5-fpm meld
 
 apt-get install -y php5-mysql php5-curl
+
+#Installing Node.js v4
+wget -qO- https://deb.nodesource.com/setup_4.x | sudo bash -
+apt-get install --yes nodejs
 
 #Some fonts
 apt-get install -y ttf-ubuntu-font-family ttf-dejavu ttf-bitstream-vera fonts-cantarell fonts-droid fonts-inconsolata fdupes
