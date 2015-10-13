@@ -187,4 +187,7 @@ Remove-Variable MU
 Set-ItemProperty "HKCU:\Software\Microsoft\Internet Explorer\Main" "Start Page" "about:blank"
 
 
+#Fixing Time on Windows (use if intend to use Dual Boot with normal systems)
+Set-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformation" "RealTimeIsUniversal" 1
+
 echo "Done. Note that some of these changes require a logout/restart to take effect."
