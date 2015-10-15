@@ -10,6 +10,7 @@
     showInvisibles: true
     backUpBeforeSaving: true
     tabType: "soft"
+    invisibles: {}
   core:
     followSymlinks: true
     ignoredNames: [
@@ -22,22 +23,16 @@
       "*.pyc"
       "Thumbs.db"
     ]
-    themes: [
-      "one-dark-ui"
-      "monokai"
-    ]
     autoHideMenuBar: true
     audioBeep: false
-  linter: {}
-  editor:
-    invisibles: {}
-  "one-dark-ui": {}
-  tabs:
-    usePreviewTabs: true
-    enableVcsColoring: true
-  pigments: {}
+    projectHome: "/home/yhnavein/puredev"
   linter:
     showErrorTabProject: false
     showErrorTabFile: false
     showErrorPanel: false
     lintOnFly: false
+  "one-dark-ui": {}
+  tabs:
+    usePreviewTabs: true
+    enableVcsColoring: true
+  pigments: {}

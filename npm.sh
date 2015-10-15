@@ -7,4 +7,4 @@ npm install -g bower jshint eslint grunt-cli karma-cli nodemon node-inspector no
 
 npm install -g git-stats npm-check-updates git-stats-importer
 
-npm install -g typescript yo babel express-generator
+npm install -g typescript yo babel express-generator mocha

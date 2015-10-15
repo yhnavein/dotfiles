@@ -52,3 +52,6 @@ set tabstop=2
 
 set mouse=a
 set mousehide
+
+" Enable syntax for config files
+au BufNewFile,BufRead *.ini,*/.hgrc,*.conf setf dosini

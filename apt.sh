@@ -53,3 +53,6 @@ gem install teamocil
 add-apt-repository ppa:dimula73/krita
 apt-get update
 apt-get install krita-2.9
+
+#Install Java JRE and JDK
+apt-get install default-jre default-jdk
