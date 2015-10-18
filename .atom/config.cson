@@ -36,3 +36,7 @@
     usePreviewTabs: true
     enableVcsColoring: true
   pigments: {}
+  "linter-eslint":
+    useGlobalEslint: true
+    showRuleIdInMessage: true
+    eslintRulesDir: "/home/yhnavein"
