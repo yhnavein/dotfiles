@@ -43,3 +43,11 @@
     eslintRulesDir: "/home/yhnavein"
   "tree-view":
     hideIgnoredNames: true
+  "atom-beautify": {}
+  "atom-typescript": {}
+".source.ts":
+  editor:
+    preferredLineLength: 100
+".source.tsx":
+  editor:
+    preferredLineLength: 100
