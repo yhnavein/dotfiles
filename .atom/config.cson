@@ -45,6 +45,7 @@
     hideIgnoredNames: true
   "atom-beautify": {}
   "atom-typescript": {}
+  minimap: {}
 ".source.ts":
   editor:
     preferredLineLength: 100

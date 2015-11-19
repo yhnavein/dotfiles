@@ -21,7 +21,7 @@ add-apt-repository ppa:webupd8team/sublime-text-3
 apt-get update && apt-get install sublime-text
 
 
-wget --no-check-certificate http://install.ohmyz.sh -O - | sh
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 chsh -s `which zsh`
 
 # Installing programmer stuff
@@ -35,10 +35,7 @@ apt-get install --yes nodejs
 
 #Some fonts
 apt-get install -y ttf-ubuntu-font-family ttf-dejavu ttf-bitstream-vera fonts-cantarell fonts-droid fonts-inconsolata fdupes
-
-#Installing Zeal (Dash for Linux)
-add-apt-repository ppa:jerzy-kozera/zeal-ppa
-apt-get update && apt-get install zeal
+apt-get install -y fonts-crosextra-carlito fonts-crosextra-caladea
 
 apt-get install -y conky-all transmission
 
