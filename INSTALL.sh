@@ -12,6 +12,7 @@ sudo -v
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 files=".vimrc .vim .zshrc .jshintrc .tigrc .zsh_profile .gitconfig .hgrc .conkyrc .conky-weather .tmux.conf .eslintrc .atom"    # list of files/folders to symlink in homedir
+configFiles="Code mimeapps.list redshift.conf"
 
 ##########
 
@@ -28,7 +29,13 @@ echo "...done"
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 echo "Moving any existing dotfiles from ~ to $olddir"
 for file in $files; do
-    mv  ~/$file ~/dotfiles_old/
-    echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file ~/$file
+  mv  ~/$file ~/dotfiles_old/
+  echo "Creating symlink to $file in home directory."
+  ln -s $dir/$file ~/$file
+done
+
+for file in $configFiles; do
+  mv  ~/.config/$file ~/dotfiles_old/.config/
+  echo "Creating symlink to .config/$file in ~/.config directory."
+  ln -s $dir/.config/$file ~/.config/$file
 done

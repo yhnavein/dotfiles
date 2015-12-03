@@ -46,9 +46,9 @@
   "atom-beautify": {}
   "atom-typescript": {}
   minimap: {}
-".source.ts":
+".source.tsx":
   editor:
     preferredLineLength: 100
-".source.tsx":
+".source.ts":
   editor:
     preferredLineLength: 100
