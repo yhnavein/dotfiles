@@ -9,3 +9,6 @@ Remove-ItemProperty -Name "AutoConfigURL" -Path "HKCU:\Software\Microsoft\Window
 
 # Turn off UAC
 Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" "EnableLUA" "0"
+
+# Disabling stupid Google Chrome policies enforced by corporate
+Remove-Item -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Recurse
