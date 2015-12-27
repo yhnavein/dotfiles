@@ -94,3 +94,5 @@ alias mvn-update="mvn appengine:update -Pdevelopment -Dmaven.test.skip"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+
+[ -s "/home/yhnavein/.dnx/dnvm/dnvm.sh" ] && . "/home/yhnavein/.dnx/dnvm/dnvm.sh" # Load dnvm
