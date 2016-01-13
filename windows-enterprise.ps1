@@ -12,3 +12,12 @@ Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Syste
 
 # Disabling stupid Google Chrome policies enforced by corporate
 Remove-Item -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Recurse
+
+
+####### Info #######
+####################
+# You can add this script to Task Scheduler by adding new Action:
+# > Powershell.exe -File "path\windows-enterprise.ps1" -NoLogo -NonInteractive  -command set-executionpolicy unrestricted
+# You may need to change command execution policy in Powershell by:
+# > Set-ExecutionPolicy RemoteSigned -Confirm
+# In Task Scheduler task need to be **run with highest privileges**
