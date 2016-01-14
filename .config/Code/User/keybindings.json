@@ -1,4 +1,32 @@
 // Place your key bindings in this file to overwrite the defaults
 [
-	{ "key": "ctrl+shift+d",   "command": "editor.action.copyLinesDownAction"}
+	{
+		"key": "ctrl+r",
+		"command": "workbench.action.gotoSymbol"
+	},
+	{
+		"key": "ctrl+shift+down",
+		"command": "editor.action.moveLinesDownAction",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+up",
+		"command": "editor.action.moveLinesUpAction",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "shift+shift+d",
+		"command": "editor.action.copyLinesDownAction",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+up",
+		"command": "editor.action.insertCursorAbove",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+down",
+		"command": "editor.action.insertCursorBelow",
+		"when": "editorTextFocus"
+	}
 ]
