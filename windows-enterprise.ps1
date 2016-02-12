@@ -13,6 +13,9 @@ Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Syste
 # Disabling stupid Google Chrome policies enforced by corporate
 Remove-Item -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Recurse
 
+# Disabling stupid Ctrl+Ald+Del to access this computer
+Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" "DisableCAD" "1"
+
 
 ####### Info #######
 ####################
