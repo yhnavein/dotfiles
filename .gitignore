@@ -11,3 +11,5 @@ npm-debug.log
 .atom/.npm
 .atom/.apm
 .atom/.node-gyp
+
+.config/Code
