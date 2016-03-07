@@ -8,3 +8,5 @@ npm install -g bower jshint eslint grunt-cli karma-cli nodemon node-inspector no
 npm install -g git-stats npm-check git-stats-importer
 
 npm install -g typescript yo babel mocha
+
+npm install -g space-hogs
