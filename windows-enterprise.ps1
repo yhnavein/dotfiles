@@ -16,6 +16,8 @@ Remove-Item -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Recurse
 # Disabling stupid Ctrl+Ald+Del to access this computer
 Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" "DisableCAD" "1"
 
+# Changing time to open ScreenSaver to 30min, instead 8mins default in my AD -.-'
+Set-ItemProperty "HKCU:\Software\Policies\Microsoft\Windows\Control Panel\Desktop" "ScreenSaveTimeOut" "1800"
 
 ####### Info #######
 ####################
