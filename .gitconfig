@@ -32,7 +32,7 @@
 	untracked = cyan
 
 [merge]
-	tool = vimdiff
+	tool = mymeld
 [mergetool "mymeld"]
 	cmd = meld "$LOCAL" "$MERGED" "$REMOTE"
 
