@@ -88,11 +88,11 @@ export IBUS_ENABLE_SYNC_MODE=1
 
 alias tmuxks="tmux kill-session"
 alias tmuxkr="tmux kill-server"
-alias mvni="mvn clean install -Dmaven.test.skip -Plocal"
-alias mvn-update="mvn appengine:update -Pdevelopment -Dmaven.test.skip"
+# alias mvni="mvn clean install -Dmaven.test.skip -Plocal"
+# alias mvn-update="mvn appengine:update -Pdevelopment -Dmaven.test.skip"
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+# export PATH="/usr/local/heroku/bin:$PATH"
 
 
 [ -s "/home/yhnavein/.dnx/dnvm/dnvm.sh" ] && . "/home/yhnavein/.dnx/dnvm/dnvm.sh" # Load dnvm

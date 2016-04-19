@@ -15,18 +15,13 @@
 		"when": "editorTextFocus"
 	},
 	{
-		"key": "shift+shift+d",
+		"key": "ctrl+shift+d",
 		"command": "editor.action.copyLinesDownAction",
 		"when": "editorTextFocus"
 	},
 	{
-		"key": "ctrl+shift+up",
-		"command": "editor.action.insertCursorAbove",
-		"when": "editorTextFocus"
-	},
-	{
-		"key": "ctrl+shift+down",
-		"command": "editor.action.insertCursorBelow",
+		"key": "ctrl+l",
+		"command": "expandLineSelection",
 		"when": "editorTextFocus"
 	}
 ]

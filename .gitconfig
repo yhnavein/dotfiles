@@ -32,7 +32,7 @@
 	untracked = cyan
 
 [merge]
-	tool = vimdiff
+	tool = mymeld
 [mergetool "mymeld"]
 	cmd = meld "$LOCAL" "$MERGED" "$REMOTE"
 
@@ -72,4 +72,8 @@
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
+	required = true
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
 	required = true

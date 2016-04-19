@@ -7,6 +7,9 @@ npm-debug.log
 .atom/packages
 .atom/compile-cache
 .atom/dev
+.atom/blob-store
 .atom/.npm
 .atom/.apm
 .atom/.node-gyp
+
+.config/Code
