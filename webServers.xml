@@ -1,0 +1,9 @@
+<application>
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ed0e519d-3eb7-48ee-ae37-e98cf4db9532" name="exchange-starter" url="http://localhost:9001">
+        <fileTransfer accessType="LOCAL" />
+      </webServer>
+    </option>
+  </component>
+</application>
