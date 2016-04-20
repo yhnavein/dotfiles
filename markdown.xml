@@ -1,0 +1,5 @@
+<application>
+  <component name="MarkdownApplicationSettings">
+    <MarkdownCssSettings StylesheetUri="file:$APPLICATION_PLUGINS_DIR$/markdown/lib/darcula.css" />
+  </component>
+</application>
