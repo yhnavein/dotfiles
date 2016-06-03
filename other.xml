@@ -6,13 +6,10 @@
           <State>
             <id />
           </State>
-          <State>
-            <id>Spelling</id>
-          </State>
         </expanded-state>
         <selected-state>
           <State>
-            <id>Spelling</id>
+            <id>CoffeeScript</id>
           </State>
         </selected-state>
       </profile-state>
@@ -54,7 +51,7 @@
         <option name="PATH_TO_PPK" value="" />
       </value>
     </option>
-    <option name="PATH_TO_PASSWORD_FILE" value="$userdir/.cvspass" />
+    <option name="PATH_TO_PASSWORD_FILE" />
     <option name="TIMEOUT" value="10" />
     <option name="MAKE_CHECKED_OUT_FILES_READONLY" value="false" />
     <option name="CHECKOUT_PRUNE_EMPTY_DIRECTORIES" value="true" />
@@ -65,13 +62,5 @@
     <option name="DO_OUTPUT" value="false" />
     <option name="SEND_ENVIRONMENT_VARIABLES_TO_SERVER" value="false" />
     <option name="SHOW_PATH" value="true" />
-  </component>
-  <component name="NodeJsLocalInterpreters">
-    <local-interpreter path="/usr/bin/node" />
-    <local-interpreter path="/usr/local/bin/node" />
-  </component>
-  <component name="NodeLocalInterpreterManager">
-    <node-interpreter path="/usr/local/bin/node" version="(Does not exist)" last-modified="1461178190255" />
-    <node-interpreter path="/usr/bin/node" version="4.4.3" last-modified="1460521122000" />
   </component>
 </application>

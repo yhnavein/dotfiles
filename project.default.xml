@@ -1,8 +1,8 @@
 <application>
   <component name="ProjectManager">
-    <defaultProject>
-      <component name="Encoding">
-        <file url="PROJECT" charset="UTF-8" />
+    <defaultProject version="4">
+      <component name="NamedScopeManager">
+        <order />
       </component>
       <component name="ProjectLevelVcsManager" settingsEditedManually="false">
         <OptionsSetting value="true" id="Add" />
@@ -14,10 +14,10 @@
         <ConfirmationsSetting value="0" id="Add" />
         <ConfirmationsSetting value="0" id="Remove" />
       </component>
-      <component name="PropertiesComponent">
-        <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-        <property name="settings.editor.splitter.proportion" value="0.2" />
+      <component name="ProjectModuleManager">
+        <modules />
       </component>
+      <component name="ProjectRootManager" version="2" />
     </defaultProject>
   </component>
 </application>
