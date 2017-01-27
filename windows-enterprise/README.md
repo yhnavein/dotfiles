@@ -12,11 +12,11 @@
 
 ## How to install it?
 
-1) Copy `windowd-enterprise.ps1` directly to the `C:/`
-2) Download `MakingLifeEasier.xml` file
-3) Edit this file and change all occurences of `CORPORATE\USERNAME` to your username and save it
-4) Open **Task Scheduler**, go to **Task Scheduler Library**, right click on the list , select **Import Task...** and choose the `MakingLifeEasier.xml` file
-5) You will be asked to provide your domain password
+1. Copy `windowd-enterprise.ps1` directly to the `C:/`
+2. Download `MakingLifeEasier.xml` file
+3. Edit this file and change all occurences of `CORPORATE\USERNAME` to your username and save it
+4. Open **Task Scheduler**, go to **Task Scheduler Library**, right click on the list , select **Import Task...** and choose the `MakingLifeEasier.xml` file
+5. You will be asked to provide your domain password
 
 ## Side notes
 
