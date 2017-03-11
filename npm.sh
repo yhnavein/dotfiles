@@ -3,10 +3,14 @@
 # Ask for the administrator password upfront.
 sudo -v
 
-npm install -g bower  eslint grunt-cli gulp-cli karma-cli nodemon node-inspector node-static
+# Basic stuff
+npm install -g eslint gulp-cli karma-cli nodemon node-inspector node-static npm-check yarn mocha
 
-npm install -g git-stats npm-check git-stats-importer
+# Git Stats
+npm install -g git-stats git-stats-importer
 
-npm install -g typescript yo babel mocha
+# Around TypeScript / Transpilers
+npm install -g typescript typings yo babel ava
 
-npm install -g space-hogs
+# Useful stuff
+npm install -g space-hogs mjml plop
