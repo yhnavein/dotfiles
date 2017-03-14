@@ -10,7 +10,7 @@ npm install -g eslint gulp-cli karma-cli nodemon node-inspector node-static npm-
 npm install -g git-stats git-stats-importer
 
 # Around TypeScript / Transpilers
-npm install -g typescript typings yo babel ava
+npm install -g typescript tslint typings yo babel ava
 
 # Useful stuff
 npm install -g space-hogs mjml plop
