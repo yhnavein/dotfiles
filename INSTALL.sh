@@ -12,7 +12,8 @@ sudo -v
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 files=".vimrc .vim .zshrc .jshintrc .tigrc .zsh_profile .gitconfig .hgrc .conkyrc .conky-weather .tmux.conf .eslintrc .atom"    # list of files/folders to symlink in homedir
-configFiles="Code mimeapps.list redshift.conf"
+configFiles="mimeapps.list redshift.conf"
+fishFiles="alias.fish export.fish config.fish"
 
 ##########
 
@@ -38,4 +39,10 @@ for file in $configFiles; do
   mv  ~/.config/$file ~/dotfiles_old/.config/
   echo "Creating symlink to .config/$file in ~/.config directory."
   ln -s $dir/.config/$file ~/.config/$file
+done
+
+for file in $fishFiles; do
+  mv  ~/.config/fish/$file ~/dotfiles_old/.config/fish/
+  echo "Creating symlink to .config/fish/$file in ~/.config/fish directory."
+  ln -s $dir/fish-config/$file ~/.config/fish/$file
 done

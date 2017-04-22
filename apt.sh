@@ -11,8 +11,7 @@ apt-get update && apt-get install google-chrome-stable
 
 # Installing usefult stuff
 
-
-apt-get install -y vim git tig mercurial node zsh
+apt-get install -y vim git tig mercurial node fish
 
 apt-get install -y firefox
 
@@ -20,17 +19,20 @@ apt-get install -y firefox
 add-apt-repository ppa:webupd8team/sublime-text-3
 apt-get update && apt-get install sublime-text
 
+# Old Oh My Zsh
+# sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+# chsh -s `which zsh`
 
-sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-chsh -s `which zsh`
+chsh -s `which fish`
 
 # Installing programmer stuff
-apt-get install -y mysql-server-5.6 postgresql-9.3 htop tmux nginx php5 php5-fpm meld
+apt-get install -y mysql-server-5.7 postgresql-9.6 htop tmux nginx meld
 
-apt-get install -y php5-mysql php5-curl
+# Installing PHP stuff
+apt-get install -y php5 php5-fpm php5-mysql php5-curl
 
 #Installing Node.js v4
-wget -qO- https://deb.nodesource.com/setup_4.x | sudo bash -
+wget -qO- https://deb.nodesource.com/setup_6.x | sudo bash -
 apt-get install --yes nodejs
 
 #Some fonts

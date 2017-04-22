@@ -7,6 +7,9 @@ New-ItemProperty -Path $registryPath -Name "AutoDetect" -Value "0" -PropertyType
 
 Remove-ItemProperty -Name "AutoConfigURL" -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
 
+# Turn off Proxy in Internet Options
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" "ProxyEnable" "0"
+
 # Turn off UAC
 Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" "EnableLUA" "0"
 
