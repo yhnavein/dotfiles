@@ -1,13 +1,18 @@
 [user]
 	name = Piotrek Dąbrowski
 	email = floubadour@gmail.com
+	signingkey = F62C1370
 [push]
 	default = simple
+	followTags = true
 [core]
 	editor = /usr/bin/vim
 	fileMode = false
 [diff]
 	algorithm = patience
+
+[commit]
+	gpgSign = true
 
 [giggle]
 	main-window-maximized = false
@@ -32,9 +37,12 @@
 	untracked = cyan
 
 [merge]
-	tool = mymeld
+	tool = icdiff
+	conflictstyle = diff3
 [mergetool "mymeld"]
 	cmd = meld "$LOCAL" "$MERGED" "$REMOTE"
+[mergetool "icdiff"]
+	cmd = icdiff --inline-numbers $LOCAL $REMOTE
 
 [alias]
 	hist = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s' --graph
@@ -77,3 +85,5 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[gpg]
+	program = gpg1
