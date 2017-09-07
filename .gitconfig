@@ -11,9 +11,6 @@
 [diff]
 	algorithm = patience
 
-[commit]
-	gpgSign = true
-
 [giggle]
 	main-window-maximized = false
 	main-window-geometry = 955x710+1+68
