@@ -8,6 +8,7 @@
 [core]
 	editor = /usr/bin/vim
 	fileMode = false
+	autocrlf = input
 [diff]
 	algorithm = patience
 
@@ -34,7 +35,7 @@
 	untracked = cyan
 
 [merge]
-	tool = icdiff
+	tool = mymeld
 	conflictstyle = diff3
 [mergetool "mymeld"]
 	cmd = meld "$LOCAL" "$MERGED" "$REMOTE"
@@ -84,3 +85,5 @@
 	required = true
 [gpg]
 	program = gpg1
+[rerere]
+	enabled = true

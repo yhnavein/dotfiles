@@ -17,20 +17,13 @@ brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
 
-brew install htop tmux vim
+brew install htop tmux vim jq nginx siege
 
-brew install wget curl zsh git mercurial tig
+brew install wget curl fish git mercurial tig
 
-brew install node
+brew install node yarn swagger-codegen
 
-brew install mysql postgresql
-
-#Java stuff
-
-brew install maven
-
-
-
+brew install mysql postgresql oniguruma
 
 # Remove outdated versions from the cellar.
 brew cleanup
