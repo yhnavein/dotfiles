@@ -191,6 +191,14 @@ Set-ItemProperty "HKCU:\Software\Microsoft\Internet Explorer\Main" "Start Page" 
 Set-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformation" "RealTimeIsUniversal" 1
 
 
+### Fixing ridiculous Language Key shortcuts
+### ----------------------------------------
+
+Set-ItemProperty "HKCU:\Keyboard Layout\Toggle" "Hotkey" 3
+Set-ItemProperty "HKCU:\Keyboard Layout\Toggle" "Language Hotkey" 3
+Set-ItemProperty "HKCU:\Keyboard Layout\Toggle" "Layout Hotkey" 3
+
+
 ### Fixing Access Problems of IIS
 icacls "C:\Windows\System32\inetsrv\config" /t /grant "IIS AppPool\DefaultAppPool":(R)
 
