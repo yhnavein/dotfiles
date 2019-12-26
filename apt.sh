@@ -25,14 +25,18 @@ apt-get update && apt-get install sublime-text
 
 chsh -s `which fish`
 
+# Install Postgres 12
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" | sudo tee  /etc/apt/sources.list.d/pgdg.list
+
 # Installing programmer stuff
-apt-get install -y mysql-server-5.7 postgresql-9.6 htop tmux nginx meld
+apt-get install -y postgresql-12 htop tmux nginx meld
 
 # Installing PHP stuff
-apt-get install -y php5 php5-fpm php5-mysql php5-curl
+# apt-get install -y php5 php5-fpm php5-mysql php5-curl
 
 #Installing Node.js v4
-wget -qO- https://deb.nodesource.com/setup_6.x | sudo bash -
+wget -qO- https://deb.nodesource.com/setup_10.x | sudo bash -
 apt-get install --yes nodejs
 
 #Some fonts

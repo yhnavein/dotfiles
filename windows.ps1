@@ -115,18 +115,58 @@ Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explo
 # Recycle Bin: Disable Delete Confirmation Dialog
 Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "ConfirmFileDelete" 0
 
-# Setting default explorer view to This PC
-Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "LaunchTo" 0
+# Disable Bing Search in the Start Menu
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" -Name "BingSearchEnabled" -Type DWord -Value 0
+If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search")) {
+  New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Force | Out-Null
+}
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Name "DisableWebSearch" -Type DWord -Value 1
 
-# Turn Off Windows Defender
-Set-ItemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender" "DisableAntiSpyware" 1
+# Disable Cortana
+If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Personalization\Settings")) {
+  New-Item -Path "HKCU:\SOFTWARE\Microsoft\Personalization\Settings" -Force | Out-Null
+}
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Personalization\Settings" -Name "AcceptedPrivacyPolicy" -Type DWord -Value 0
+If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\InputPersonalization")) {
+  New-Item -Path "HKCU:\SOFTWARE\Microsoft\InputPersonalization" -Force | Out-Null
+}
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\InputPersonalization" -Name "RestrictImplicitTextCollection" -Type DWord -Value 1
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\InputPersonalization" -Name "RestrictImplicitInkCollection" -Type DWord -Value 1
+If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\InputPersonalization\TrainedDataStore")) {
+  New-Item -Path "HKCU:\SOFTWARE\Microsoft\InputPersonalization\TrainedDataStore" -Force | Out-Null
+}
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\InputPersonalization\TrainedDataStore" -Name "HarvestContacts" -Type DWord -Value 0
+If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search")) {
+  New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Force | Out-Null
+}
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Name "AllowCortana" -Type DWord -Value 0
 
+# Change the default Calc app. The default path used to install SpeedCrunch will be used.
+# SpeedCrunch: https://speedcrunch.org/download.html
+Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\AppKey\18" "ShellExecute" "C:\Program Files (x86)\SpeedCrunch\speedcrunch.exe"
 
-### Charm Bar
-### --------------------------
+# Hide Taskbar People Icon
+If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People")) {
+  New-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People" | Out-Null
+}
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People" -Name "PeopleBand" -Type DWord -Value 0
 
-# Disable Bing Search
-Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\ConnectedSearch" "ConnectedSearchUseWeb" 0
+# Hide recent files in Explorer
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" -Name "ShowRecent" -Type DWord -Value 0
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" -Name "ShowFrequent" -Type DWord -Value 0
+
+# Change default Explorer view to This PC
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "LaunchTo" -Type DWord -Value 1
+
+# Show This PC on desktop
+If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu")) {
+  New-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu" -Force | Out-Null
+}
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu" -Name "{20D04FE0-3AEA-1069-A2D8-08002B30309D}" -Type DWord -Value 0
+If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel")) {
+  New-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" -Force | Out-Null
+}
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" -Name "{20D04FE0-3AEA-1069-A2D8-08002B30309D}" -Type DWord -Value 0
 
 
 ### SSD Specific Tweaks
@@ -134,22 +174,8 @@ Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\ConnectedSearc
 
 # Disable SuperFetch
 Set-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters" "EnableSuperfetch" 0
-
-
-### Login Screen
-### --------------------------
-
-## Enable Custom Background on the Login / Lock Screen
-## Background file: C:\Windows\System32\Oobe\info\backgrounds\backgroundDefault.jpg
-## Alternate Sizes: ./background{width}x{Height}.jpg (./background1024x768.jpg)
-## File Size Limit: 256Kb
-Set-ItemProperty "HKLM:\Software\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\Background" "OEMBackground" 1
-
-## Win7: Change Shadows on Account Selection Screen (0 Light [Green], 1 Dark [Black], 2 None)
-# Set-ItemProperty "HKLM:\Software\Microsoft\Windows\CurrentVersion\Authentication\LogonUI" "ButtonSet" 1
-
-## More Info: http://myitforum.com/myitforumwp/2012/12/19/corporate-identity-oem-branding-in-windows-8/
-
+Stop-Service "SysMain" -WarningAction SilentlyContinue
+Set-Service "SysMain" -StartupType Disabled
 
 ### Accessibility
 ### --------------------------
@@ -162,23 +188,12 @@ Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File 
 ### Windows Update
 ### --------------------------
 
-$AUSettings = (New-Object -com "Microsoft.Update.AutoUpdate").Settings
-# Windows Update: Auto-Download but not Install. 0=NotConfigured, 1=Disabled, 2=NotifyBeforeDownload, 3=NotifyBeforeInstall, 4=ScheduledInstall
-$AUSettings.NotificationLevel = 2
-# Windows Update: Include Recommended Updates
-$AUSettings.IncludeRecommendedUpdates = $true
-$AUSettings.Save | Out-Null
-Remove-Variable AUSettings
-
-if (!(Test-Path "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate")) {New-Item -Path HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate -Type Folder | Out-Null}
-# Windows Update: Don't automatically reboot after install
-Set-ItemProperty "HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate" "NoAutoRebootWithLoggedOnUsers" 1d
-
-# Windows Update: Opt-In to Microsoft Update
-$MU = New-Object -ComObject Microsoft.Update.ServiceManager -Strict
-$MU.AddService2("7971f918-a847-4430-9279-4a52d1efe18d",7,"")
-Remove-Variable MU
-
+# Disable Windows Update automatic restart
+If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU")) {
+  New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -Force | Out-Null
+}
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -Name "NoAutoRebootWithLoggedOnUsers" -Type DWord -Value 1
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -Name "AUPowerManagement" -Type DWord -Value 0
 
 ### Internet Explorer
 ### --------------------------
@@ -186,9 +201,16 @@ Remove-Variable MU
 # Set home page to `about:blank` for faster loading
 Set-ItemProperty "HKCU:\Software\Microsoft\Internet Explorer\Main" "Start Page" "about:blank"
 
-
 #Fixing Time on Windows (use if intend to use Dual Boot with normal systems)
 Set-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformation" "RealTimeIsUniversal" 1
+
+
+### Fix broken browsers/refresh rate after some random Update
+### ----------------------------------------
+
+Set-ItemProperty "HKCU:\System\GameConfigStore" "GameDVR_Enabled" 0
+Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\PolicyManager\default\ApplicationManagement\AllowGameDVR" "value" 0
+Get-AppxPackage *xboxapp* | Remove-AppxPackage
 
 
 ### Fixing ridiculous Language Key shortcuts
@@ -198,8 +220,11 @@ Set-ItemProperty "HKCU:\Keyboard Layout\Toggle" "Hotkey" 3
 Set-ItemProperty "HKCU:\Keyboard Layout\Toggle" "Language Hotkey" 3
 Set-ItemProperty "HKCU:\Keyboard Layout\Toggle" "Layout Hotkey" 3
 
+# Disable Sticky Keys
+Set-ItemProperty -Path "HKCU:\Control Panel\Accessibility\StickyKeys" -Name "Flags" -Type String -Value "506"
+
 
 ### Fixing Access Problems of IIS
-icacls "C:\Windows\System32\inetsrv\config" /t /grant "IIS AppPool\DefaultAppPool":(R)
+# icacls "C:\Windows\System32\inetsrv\config" /t /grant "IIS AppPool\DefaultAppPool":(R)
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."

@@ -4,13 +4,16 @@
 sudo -v
 
 # Basic stuff
-npm install --unsafe-perm -g eslint gulp-cli nodemon node-inspector node-static npm-check mocha
+npm install --unsafe-perm -g eslint nodemon node-inspector node-static npm-check typescript prettier
 
-# Git Stats
-npm install --unsafe-perm -g git-stats git-stats-importer
+# Additional stuff
+npm install --unsafe-perm -g meta mjml plop lerna
 
-# Around TypeScript / Transpilers
-npm install --unsafe-perm -g typescript tslint yo babel ava
+# 3rd party stuff
+npm install --unsafe-perm -g netlify now ionic redoc-cli
 
-# Useful stuff
-npm install --unsafe-perm -g space-hogs mjml plop
+# OpenAPI tools
+npm install --unsafe-perm -g swaggie restful-react
+
+# FrontEnd Framework used everyday
+npm install --unsafe-perm -g create-react-app @vue/cli
