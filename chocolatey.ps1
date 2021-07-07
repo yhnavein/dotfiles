@@ -8,7 +8,8 @@ if ((which cinst) -eq $null) {
 cinst curl
 #cinst dropbox
 #cinst evernote
-cinst filezilla
+cinst notion
+# cinst filezilla
 # cinst githubforwindows
 cinst git.install
 cinst nodejs.install
@@ -16,15 +17,17 @@ cinst nodejs.install
 # cinst googlechrome.canary
 # cinst hg
 # cinst fiddler
-cinst firefox
+cinst postman
+# cinst firefox # Sorry Firefox, Proton is disgusting
 cinst nuget.commandline
 cinst opera
+cinst vivaldi
 #cinst putty
 #cinst ruby
 # cinst skype
 cinst sublimetext3
 #cinst virtualclonedrive
-#cinst vlc
+cinst vlc
 # cinst webpi
 # cinst webpicommandline
 # cinst linqpad
@@ -38,11 +41,12 @@ cinst paint.net
 cinst calibre
 cinst winscp
 cinst kdiff3
-cinst spotify
+# cinst spotify
 cinst notepad2
 cinst veracrypt
-cinst lastpass
+# cinst lastpass
 cinst pdfxchangeviewer
-cinst transmission-qt
+cinst picotorrent
+# cinst transmission-qt
 cinst aimp
 # cinst krita

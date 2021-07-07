@@ -23,7 +23,7 @@ brew install wget curl fish git mercurial tig
 
 brew install node yarn swagger-codegen
 
-brew install mysql postgresql oniguruma
+brew install mysql postgresql
 
 # Remove outdated versions from the cellar.
 brew cleanup

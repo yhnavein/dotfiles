@@ -1,0 +1,5 @@
+Font=Ubuntu Mono
+FontHeight=12
+ThemeFile=dracula
+Transparency=low
+OpaqueWhenFocused=yes

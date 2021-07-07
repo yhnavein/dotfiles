@@ -11,7 +11,7 @@ sudo -v
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".vimrc .vim .jshintrc .tigrc .gitconfig .hgrc .tmux.conf .eslintrc"    # list of files/folders to symlink in homedir
+files=".vimrc .vim .tigrc .gitconfig .tmux.conf .eslintrc .bashrc .inputrc .minttyrc .prettierrc .editorconfig"    # list of files/folders to symlink in homedir
 configFiles="mimeapps.list"
 fishFiles="alias.fish export.fish config.fish"
 

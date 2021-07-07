@@ -86,10 +86,19 @@ source $ZSH/oh-my-zsh.sh
 # https://youtrack.jetbrains.com/issue/IDEA-78860
 export IBUS_ENABLE_SYNC_MODE=1
 
-alias tmuxks="tmux kill-session"
-alias tmuxkr="tmux kill-server"
+# alias tmuxks="tmux kill-session"
+# alias tmuxkr="tmux kill-server"
 # alias mvni="mvn clean install -Dmaven.test.skip -Plocal"
 # alias mvn-update="mvn appengine:update -Pdevelopment -Dmaven.test.skip"
+alias yc='yarn upgrade-interactive --latest'
+alias ys='yarn serve'
+alias ya='yarn api'
+alias yb='yarn build:prod'
+alias ysm='yarn serve:mock'
+alias ycd='yarn check:deps'
+alias yt='yarn test:dev || yarn test'
+alias yclean='rm -rf node_modules/ && rm yarn.lock && yarn'
+alias analyze='source-map-explorer "build/static/js/*.js"'
 
 ### Added by the Heroku Toolbelt
 # export PATH="/usr/local/heroku/bin:$PATH"
